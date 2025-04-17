@@ -71,7 +71,7 @@ int main(void)
         for (int i = 1; i < max_y; i++) // draw side border
         {  
             mvprintw(i, 0, BORDER);
-            mvprint(i, max_x -1, BORDER);
+            mcprint(i, max_x -1, BORDER);
         }
         attroff(COLOR_PAIR(3));
 
