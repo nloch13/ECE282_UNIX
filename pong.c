@@ -42,6 +42,13 @@ int main(void)
     init_pair(3, COLOR_GREEN, COLOR_BLACK); //border color 
     init_pair(4, COLOR_RED, COLOR_BLACK); //bumper  color 
     getmaxyx(stdscr, max_y, max_x);
+    
+    //ball
+    ball.px = max_x / 2;
+    ball.py = max_y / 2;
+    ball.dx = (rand() & 1) ? 1 : -1;
+    ball.dy = (rand() & 1) ? 1 : -1;
+
 
     //paddle 1
     paddle1.length = 6;
@@ -60,7 +67,7 @@ int main(void)
         getmaxyx(stdscr, max_y, max_x);
         clear();
 
-        mvprintw(0, 0,"Hits: %d     Misses: %d     Streak: %d     Best: %d     Time: %d", hits, misses, streak, best, frame / 50);  // draw stats
+        mvprintw(0, 0,"P1: %d P2: %d   Streak: %d     Best: %d     Time: %d", score1, score2, streak, best, frame / 50);  // draw stats
         
         attron(COLOR_PAIR(3));
         for (int i = 0; i < max_x; i++)  // draw top borders
@@ -71,7 +78,7 @@ int main(void)
         for (int i = 1; i < max_y; i++) // draw side border
         {  
             mvprintw(i, 0, BORDER);
-            mcprint(i, max_x -1, BORDER);
+            mvprintw(i, max_x -1, BORDER);
         }
         attroff(COLOR_PAIR(3));
 
@@ -106,7 +113,6 @@ int main(void)
         if ((ball.px + ball.dx == paddle1.px + 2) && (ball.py + ball.dy >= paddle1.py) && (ball.py + ball.dy <= paddle1.py + paddle1.length)) 
         {
             ball.dx *= -1;
-            score1++;
             streak++;
             if (streak > best)
             {
@@ -117,7 +123,6 @@ int main(void)
         if ((ball.px + ball.dx == paddle2.px) && (ball.py + ball.dy >= paddle2.py) && (ball.py + ball.dy <= paddle2.py + paddle2.length)) 
         {
             ball.dx *= -1;
-            score2++;
             streak++;
             if (streak > best)
             {
