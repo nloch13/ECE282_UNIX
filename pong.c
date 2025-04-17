@@ -40,7 +40,7 @@ int main(void)
     init_pair(1, COLOR_CYAN, COLOR_BLACK);  //paddle color
     init_pair(2, COLOR_YELLOW, COLOR_BLACK); //ball color 
     init_pair(3, COLOR_GREEN, COLOR_BLACK); //border color 
-    init_pair(4, COLOR_RED, COLOR_BLACK); //bumper  color 
+    init_pair(4, COLOR_GREEN, COLOR_BLACK); //bumper  color 
     getmaxyx(stdscr, max_y, max_x);
     
     //ball
