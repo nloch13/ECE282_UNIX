@@ -5,7 +5,7 @@
 #define BALL_SYMBOL "O"
 #define BORDER "#"
 #define PADDLE "||"
-#define NUM_BUMPERS 2
+#define NUM_BUMPERS 3
 #define SLEEP_TIME 20000
 
 struct Ball 
@@ -27,7 +27,7 @@ int main(void)
     
     struct Ball ball;
     struct Paddle paddle1, paddle2;
-    int bumper_y[NUM_BUMPERS] = {10, 15};
+    int bumper_y[NUM_BUMPERS] = {10, 15, 20};
     int bumper_x = max_x / 2; // set this once before starting the loop
 
     system("clear");
