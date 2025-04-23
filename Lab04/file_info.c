@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <time.h>
 #include "mode.h"
 #include "names.h"
 
