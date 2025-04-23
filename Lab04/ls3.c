@@ -1,6 +1,7 @@
 //Driver file for the program 
 
 #include "do_ls.h"
+#lnclude <stdio.h>
 
 int main(int ac, char *av[]) 
 {
